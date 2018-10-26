@@ -33,8 +33,8 @@ This Firebase function will connect Firebase's and Virgil's authentication via J
 
 * **Clone the repo**
   ```bash
-  git clone https://github.com/VirgilSecurity/demo-firebase-func.git
-  cd demo-firebase-func
+  git clone https://github.com/VirgilSecurity/e3kit-firebase-func.git
+  cd e3kit-firebase-func
   ```
 * **Start up the Firebase cli**
   ```bash
@@ -72,13 +72,12 @@ This Firebase function will connect Firebase's and Virgil's authentication via J
 * **Copy `config.json` to the project's root folder and run**:
   ```bash
   cd functions
-  npm install
   npm run configure
   ```
 * (Windows users only) In `firebase.json` rename `$RESOURCE_DIR` to `%RESOURCE_DIR%`
 * **And finally, deploy the function**:
   ```bash
-  firebase deploy --only functions
+  npm run deploy
   ```
 
 **Copy the function's URL to the clipboard**: go back to the Firebase console -> Functions tab and take a note of your brand new function's url `https://YOUR_FUNCTION_URL.cloudfunctions.net/api` from the Event column. **You'll need this when setting up your apps**.
