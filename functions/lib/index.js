@@ -34,10 +34,10 @@ const generator = new virgil_sdk_1.JwtGenerator({
     apiKey: crypto.importPrivateKey(apiprivatekey),
     accessTokenSigner: new virgil_crypto_1.VirgilAccessTokenSigner(crypto)
 });
-app.use(cors({ origin: true, methods: 'OPTIONS,GET,HEAD,PUT,PATCH,POST,DELETE', }));
+app.use(cors({ origin: true, methods: 'OPTIONS,POST', }));
 app.use(validateFirebaseIdToken);
-app.post('/generate_jwt', (req, res) => {
-    const identity = req.user.email;
+app.post('/get-virgil-token', (req, res) => {
+    const identity = req.user.uid;
     const virgilJwtToken = generator.generateToken(identity);
     res.json({ token: virgilJwtToken.toString() });
 });
