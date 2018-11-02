@@ -5,7 +5,7 @@
 [Watch setup tutorial video on YouTube (4 minutes)](https://youtu.be/j0BuBtugYmA)
 
 ## Pre-requisites
-* Latest [Node](https://nodejs.org/en/download)
+* Latest LTS [Node](https://nodejs.org/en/download)
 
 ## Create Firebase project
 * Open the [Firebase console](https://console.firebase.google.com) and create a new project.
