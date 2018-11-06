@@ -46,7 +46,7 @@ const generator = new JwtGenerator({
 
 app.use(cors({ origin: true, methods: 'OPTIONS,POST', }));
 app.use(validateFirebaseIdToken);
-app.post('/get-virgil-token', (req: IRequestWithFirebaseUser, res: express.Response) => {
+app.get('/virgil-jwt', (req: IRequestWithFirebaseUser, res: express.Response) => {
   const identity = req.user.uid;
   const virgilJwtToken = generator.generateToken(identity);
   res.json({ token: virgilJwtToken.toString() });
