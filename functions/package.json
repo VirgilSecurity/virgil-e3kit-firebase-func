@@ -18,7 +18,7 @@
     "firebase-admin": "^6.0.0",
     "firebase-functions": "^2.0.5",
     "virgil-crypto": "^3.1.0",
-    "virgil-sdk": "^5.0.0"
+    "virgil-sdk": "^5.1.1"
   },
   "devDependencies": {
     "firebase": "^5.5.1",
