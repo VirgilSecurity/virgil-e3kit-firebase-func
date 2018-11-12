@@ -39,28 +39,17 @@ This Firebase function will connect Firebase's and Virgil's authentication via J
 * **Start up the Firebase cli**
   ```bash
   firebase login
-  firebase init
   ```
 > run `npm install -g firebase-tools` if you don't have the cli installed.
 
-* **User your cursor keys to select**:
-  ```bash
-  Functions: Configure and deploy Cloud Functions
-  ```
-  > Use the SPACEBAR to select the option, then hit ENTER to proceed.
+* **Connect repository to your firebase project**
 
-* **Select your firebase project** from the list, ENTER.
-
-* **Select the following answers**:
   ```bash
-  ? What language would you like to use to write Cloud Functions? TypeScript
-  ? Do you want to use TSLint to catch probable bugs and enforce style? Yes
-  ? File functions/package.json already exists. Overwrite? No
-  ? File functions/tslint.json already exists. Overwrite? No
-  ? File functions/tsconfig.json already exists. Overwrite? No
-  ? File functions/src/index.ts already exists. Overwrite? No
-  ? Do you want to install dependencies with npm now? Yes
+  firebase use --add
   ```
+* **Select your firebase project from the list, ENTER.**
+
+* **Then you need type alias for your project and press ENTER again**
 
 * **[Sign up for a free Virgil account](https://virgilsecurity.com/getstarted)** 
 
@@ -73,6 +62,7 @@ This Firebase function will connect Firebase's and Virgil's authentication via J
   ```bash
   cd functions
   npm run configure
+  npm install
   ```
 * ### (Windows users only) In `firebase.json` rename `$RESOURCE_DIR` to `%RESOURCE_DIR%`
 * **And finally, deploy the function**:

@@ -37,6 +37,7 @@ const generator = new virgil_sdk_1.JwtGenerator({
 app.use(cors({ origin: true, methods: 'OPTIONS,POST', }));
 app.use(validateFirebaseIdToken);
 app.get('/virgil-jwt', (req, res) => {
+    // You can use req.user.email, req.user.phone_number or any unique value for identity
     const identity = req.user.uid;
     const virgilJwtToken = generator.generateToken(identity);
     res.json({ token: virgilJwtToken.toString() });
