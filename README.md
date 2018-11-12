@@ -49,7 +49,7 @@ This Firebase function will connect Firebase's and Virgil's authentication via J
   ```
 * **Select your firebase project from the list, ENTER.**
 
-* **Then you need type alias for your project and press ENTER again**
+* **Then you need type alias for your project and press ENTER again.**
 
 * **[Sign up for a free Virgil account](https://virgilsecurity.com/getstarted)** 
 
@@ -70,4 +70,4 @@ This Firebase function will connect Firebase's and Virgil's authentication via J
   npm run deploy
   ```
 
-**Copy the function's URL to the clipboard**: go back to the Firebase console -> Functions tab and take a note of your brand new function's url `https://YOUR_FUNCTION_URL.cloudfunctions.net/api` from the Event column. **You'll need this when setting up your apps**.
+**Copy the function's URL to the clipboard**: go back to the Firebase console -> Functions tab and take a note of your brand new function's url `https://YOUR_FUNCTION_URL.cloudfunctions.net/api` from the TRIGGER column. **You'll need this when setting up your apps**.
