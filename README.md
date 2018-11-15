@@ -5,7 +5,8 @@
 [Watch setup tutorial video on YouTube (4 minutes)](https://youtu.be/j0BuBtugYmA)
 
 ## Pre-requisites
-* Latest LTS [Node](https://nodejs.org/en/download)
+* Node version **from 6 to 10** [Node](https://nodejs.org/en/download)
+> Node 11 is not supported yet, you can use one of node version managers to switch the version: [n](https://github.com/tj/n) or [nvm](https://github.com/creationix/nvm)
 
 ## Create Firebase project
 * Open the [Firebase console](https://console.firebase.google.com) and create a new project.
