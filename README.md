@@ -1,7 +1,5 @@
 # How to connect your Virgil and Firebase accounts for implementing end-to-end encryption
 
-## Current Status: Developer Preview. Supports only email authentication.
-
 [Watch setup tutorial video on YouTube (4 minutes)](https://youtu.be/j0BuBtugYmA)
 
 ## Pre-requisites
