@@ -13,21 +13,9 @@
 
 > Or use one that you already have.
 
-## Set up Firebase password auth for the project
+## Set up Firebase Authentication for the project
 * Select the **Authentication** panel and then click the **Sign In Method** tab.
-* Click **Email/Password** and turn on the **Enable** switch, then click **Save**.
-* Let's also set up a Firestore database for the sample apps: select the **Database** panel, click **Create database** under Firestore, choose **Start in test mode** and click **Enable**.
-* Once the database is created, click on the **Rules** tab, click **Edit rules** and paste:
-  ```
-  service cloud.firestore {
-    match /databases/{database}/documents {
-      match /{document=**} {
-        allow read, write: if request.auth.uid != null;
-      }
-    }
-  }
-  ```
-* Click **PUBLISH**.
+* Choose your authentication method and turn on the **Enable** switch, then follow instructions and click **Save**.
 
 ## Deploy the Firebase function
 This Firebase function will connect Firebase's and Virgil's authentication via JWT tokens
