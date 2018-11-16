@@ -1,4 +1,4 @@
-# How to connect your Virgil and Firebase accounts for implementing end-to-end encryption
+# Configure your Firebase project to implement Virgil End-to-End Encryption
 
 ## Pre-requisites
 * [Node](https://nodejs.org/en/download) version **from 6 to 10** 
