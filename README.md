@@ -39,7 +39,7 @@ This Firebase function will connect Firebase's and Virgil's authentication via J
 
 - Then you need to type alias for your project and press ENTER again.
 
-- **[Sign up for a free Virgil account](https://virgilsecurity.com/getstarted)**
+- [Sign up for a free Virgil account](https://virgilsecurity.com/getstarted)
 
 - Get your Virgil application config file:
 
@@ -54,7 +54,7 @@ This Firebase function will connect Firebase's and Virgil's authentication via J
   ```
 > **Windows users only**: In `firebase.json` rename `$RESOURCE_DIR` to `%RESOURCE_DIR%`
 
-- Deploy the Firebase function**:
+- Deploy the Firebase function:
   ```bash
   npm run deploy
   ```
