@@ -52,7 +52,7 @@ This Firebase function will connect Firebase's and Virgil's authentication via J
   npm run configure
   npm install
   ```
-> **Windows users only**: In `firebase.json` rename `$RESOURCE_DIR` to `%RESOURCE_DIR%`
+**Windows users only**: In **`firebase.json`** rename **`$RESOURCE_DIR`** to **`%RESOURCE_DIR%`**
 
 - Deploy the Firebase function:
   ```bash
