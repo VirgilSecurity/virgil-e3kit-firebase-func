@@ -2,7 +2,7 @@
 
 This repository contains a backend's function that connects your Virgil and Firebase accounts for implementing end-to-end encryption.
 
-## Pre-requisites
+## Prerequisites
 - [Node](https://nodejs.org/en/download) version **from 6 to 10**
 > Node 11 is not supported yet, you can use one of node version managers to switch the version: [n](https://github.com/tj/n) or [nvm](https://github.com/creationix/nvm)
 
