@@ -21,8 +21,8 @@ This Firebase function will connect Firebase's and Virgil's authentication via J
 
 - Clone the repo
   ```bash
-  git clone https://github.com/VirgilSecurity/e3kit-firebase-func.git
-  cd e3kit-firebase-func
+  git clone https://github.com/VirgilSecurity/virgil-e3kit-firebase-func.git
+  cd virgil-e3kit-firebase-func
   ```
 - Start up the Firebase CLI
   ```bash
