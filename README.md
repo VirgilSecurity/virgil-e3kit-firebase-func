@@ -6,38 +6,43 @@ This repository contains a backend's function that connects your Virgil and Fire
 - [Node](https://nodejs.org/en/download) version **from 6 to 10**
 > Node 11 is not supported yet, you can use one of node version managers to switch the version: [n](https://github.com/tj/n) or [nvm](https://github.com/creationix/nvm)
 
-## Create Firebase project
+## Configure Your Firebase Project
 
-Open the [Firebase console](https://console.firebase.google.com) and create a new project.
+We assume that you already have a Firebase Project. If you don't, please create one now at your [Firebase Console](https://console.firebase.google.com).
 
-> Or use one that you already have.
+### Configure User Authentication
 
-## Set up Firebase Authentication for the project
-- Select the **Authentication** panel and then click the **Sign In Method** tab.
-- Choose your authentication method and turn on the **Enable** switch, then follow instructions and click **Save**.
+If you haven't already, set up _Sign-in method_ in your Firebase Project by enabling any of the _Sign-in providers_. For the purposes of this tutorial it doesn't matter which sign-in provider you choose.
+
+To set up your Sign-in method, go to your [Firebase Console](https://console.firebase.google.com) and navigate to **Authentication**, under **Develop**. Go to the **Sign-in method** tab and set up your preferred sing-in method(s).
 
 ## Deploy the Firebase function
-This Firebase function will connect Firebase's and Virgil's authentication via JWT tokens
+This Firebase function will connect Firebase's and Virgil's authentication via JWT tokens.
 
-- Clone the repo
+- Clone this repository
   ```bash
   git clone https://github.com/VirgilSecurity/virgil-e3kit-firebase-func.git
   cd virgil-e3kit-firebase-func
   ```
+
+- Install Firebase CLI if you haven't already.
+  ```bash
+  npm install -g firebase-tools
+  ```
+
 - Start up the Firebase CLI
   ```bash
   firebase login
   ```
-> run `npm install -g firebase-tools` if you don't have the cli installed.
 
- - Connect repo to your Firebase project
-
+- Connect this repository to your Firebase project
   ```bash
   firebase use --add
   ```
-- Select your firebase project from the list, ENTER.
 
-- Then you need to type alias for your project and press ENTER again.
+- Select your firebase project from the list and press ENTER.
+
+- Type an alias for your project and press ENTER again.
 
 - [Sign up for a free Virgil account](https://virgilsecurity.com/getstarted)
 
