@@ -48,15 +48,17 @@ This Firebase function will connect Firebase's and Virgil's authentication via J
 
 - Get your Virgil application config file:
 
-  - On a Dashboard: **CREATE AN APPLICATION** -> choose **ADD END-TO-END ENCRYPTION TO PRODUCT** use case -> press the **CREATE APPLICATION** button -> press the **GENERATE CONFIGURATION FILE** button to generate a config file.
-  - Then click the **DOWNLOAD CONFIG FILE** button to download your `config.json` file
+  - On a Dashboard: **CREATE NEW APPLICATION** -> choose **ADD END-TO-END ENCRYPTION TO PRODUCT** use case -> press the **CREATE APPLICATION** button -> press the **GENERATE CONFIGURATION FILE** button to generate a config file -> choose a name for your API Key -> press **GENERATE**.
+  - Then click the **DOWNLOAD THIS CONFIG** button to download your `config.json` file
 
-- Copy `config.json` to the project's root folder and run:
+- Copy `config.json` to this repository's root folder and run:
   ```bash
   cd functions
   npm run configure
   npm install
   ```
+
+- If `npm install` fails, make sure you have a compatible node version. See in **Prerequisites**.
 
 * ### **Windows users only**: In **`firebase.json`** rename **`$RESOURCE_DIR`** to **`%RESOURCE_DIR%`**
 
