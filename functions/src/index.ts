@@ -57,7 +57,7 @@ app.get('/virgil-jwt', (req: IRequestWithFirebaseUser, res: express.Response) =>
 // with value `Bearer <Firebase ID Token>`.
 exports.api = functions.https.onRequest(app);
 
-exports.virgilJwt = functions.https.onCall((_data, context) => {
+exports.getVirgilJwt = functions.https.onCall((_data, context) => {
   if (!context.auth) {
     // Throwing an HttpsError so that the client gets the error details.
     throw new functions.https.HttpsError('failed-precondition', 'The function must be called ' +
