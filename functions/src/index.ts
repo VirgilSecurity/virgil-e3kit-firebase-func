@@ -24,9 +24,7 @@ const validateFirebaseIdToken = (req: IRequestWithFirebaseUser, res: express.Res
   }
 
   const idToken = req.headers.authorization.split('Bearer ')[1];
-  console.log('id token', idToken)
   admin.auth().verifyIdToken(idToken).then((decodedIdToken) => {
-    console.log('ID Token correctly decoded', decodedIdToken);
     req.user = decodedIdToken;
     next();
   }).catch((error) => {
@@ -36,6 +34,7 @@ const validateFirebaseIdToken = (req: IRequestWithFirebaseUser, res: express.Res
 };
 
 const crypto = new VirgilCrypto();
+
 const { appid, apikeyid, apiprivatekey } = functions.config().virgil;
 const generator = new JwtGenerator({
   appId: appid,
@@ -57,3 +56,15 @@ app.get('/virgil-jwt', (req: IRequestWithFirebaseUser, res: express.Response) =>
 // Requests need to be authorized by providing an `Authorization` HTTP header
 // with value `Bearer <Firebase ID Token>`.
 exports.api = functions.https.onRequest(app);
+
+exports.virgilJwt = functions.https.onCall((_data, context) => {
+  if (!context.auth) {
+    // Throwing an HttpsError so that the client gets the error details.
+    throw new functions.https.HttpsError('failed-precondition', 'The function must be called ' +
+      'while authenticated.');
+  }
+  
+  return {
+    token: generator.generateToken(context.auth.uid).toString()
+  };
+});
