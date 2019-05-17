@@ -25,7 +25,6 @@ const validateFirebaseIdToken = (req, res, next) => {
     });
 };
 const crypto = new virgil_crypto_1.VirgilCrypto();
-console.log(functions.config().virgil);
 const { appid, apikeyid, apiprivatekey } = functions.config().virgil;
 const generator = new virgil_sdk_1.JwtGenerator({
     appId: appid,
@@ -45,15 +44,14 @@ app.get('/virgil-jwt', (req, res) => {
 // Requests need to be authorized by providing an `Authorization` HTTP header
 // with value `Bearer <Firebase ID Token>`.
 exports.api = functions.https.onRequest(app);
-exports.virgilJwt = functions.https.onCall((_data, context) => {
+exports.getVirgilJwt = functions.https.onCall((_data, context) => {
     if (!context.auth) {
         // Throwing an HttpsError so that the client gets the error details.
         throw new functions.https.HttpsError('failed-precondition', 'The function must be called ' +
             'while authenticated.');
     }
-    const uid = context.auth.uid;
     return {
-        token: generator.generateToken(uid).toString()
+        token: generator.generateToken(context.auth.uid).toString()
     };
 });
 //# sourceMappingURL=index.js.map
