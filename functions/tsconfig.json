@@ -5,10 +5,10 @@
     "noImplicitReturns": true,
     "outDir": "lib",
     "sourceMap": true,
-    "target": "es6"
+    "target": "es6",
+    "esModuleInterop": true,
+    "moduleResolution": "node"
   },
   "compileOnSave": true,
-  "include": [
-    "src"
-  ]
+  "files": ["src/index.ts"]
 }
