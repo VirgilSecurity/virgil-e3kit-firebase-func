@@ -1,5 +1,7 @@
 # Configure your Firebase function to generate Virgil JWT
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/VirgilSecurity/virgil-e3kit-firebase-func.svg)](https://greenkeeper.io/)
+
 This repository contains a backend's function that connects your Virgil and Firebase accounts for implementing end-to-end encryption.
 
 ## Prerequisites
