@@ -1,0 +1,9 @@
+language: node_js
+node_js: "10"
+before_install:
+  - cd functions
+install:
+  - npm install
+script:
+  - npm test
+  - npm build
