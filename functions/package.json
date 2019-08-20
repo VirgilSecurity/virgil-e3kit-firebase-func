@@ -19,8 +19,8 @@
     "express": "^4.16.3",
     "firebase-admin": "^8.3.0",
     "firebase-functions": "^3.2.0",
-    "virgil-crypto": "^3.2.0",
-    "virgil-sdk": "^5.2.2"
+    "virgil-crypto": "^3.2.6",
+    "virgil-sdk": "^5.3.0"
   },
   "devDependencies": {
     "@types/jest": "^24.0.17",
