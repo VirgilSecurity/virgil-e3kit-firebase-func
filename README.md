@@ -1,7 +1,5 @@
 # Configure your Firebase function to generate Virgil JWT
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/VirgilSecurity/virgil-e3kit-firebase-func.svg)](https://greenkeeper.io/)
-
 This repository contains a backend's function that connects your Virgil and Firebase accounts for implementing end-to-end encryption.
 
 ## Prerequisites
@@ -46,18 +44,19 @@ This Firebase function will connect Firebase's and Virgil's authentication via J
 
 - Type an alias for your project and press ENTER again.
 
-- [Sign up for a free Virgil account](https://virgilsecurity.com/getstarted)
+- [Sign up for a free Virgil account](https://dashboard.virgilsecurity.com/signup)
 
-- Get your Virgil application config file:
+- Get your Virgil Credentials:
 
-  - On a Dashboard: **CREATE NEW APPLICATION** -> **E3KIT** -> press the **GENERATE** button in the **Config File** section -> choose a name for your APP Key -> press **CREATE**.
-  - Then click the **Download** button to download your `config.json` file
+  - Go to Virgil Dashboard -> Your Application -> E3Kit Section.
+  - Generate .env in .env file section.
+  - Download generated file, put to the project root and rename it to .env.
 
-- Copy `config.json` to this repository's root folder and run:
+- To install dependencies and configure Virgil Credentials run:
   ```bash
   cd functions
-  npm run configure
   npm install
+  npm run configure
   ```
 
   > In case you receive a message like `warning found n vulnerabilities` printed in the console after running the `npm install`, there is a potential security vulnerability in one of the demo's dependencies. Don't worry, this is a normal occurrence and in the majority of cases, is fixed by updating the packages. To install any updates, run the command `npm audit fix`. If some of the vulnerabilities persist after the update, check the results of the `npm audit` to see a detailed report. The report includes instructions on how to act on this information.
