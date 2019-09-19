@@ -2,3 +2,6 @@
 config.json
 .firebaserc
 .vscode
+.env
+functions/src/lib/*
+firebase-debug.log
