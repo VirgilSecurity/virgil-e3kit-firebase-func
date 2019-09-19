@@ -18,9 +18,9 @@ jest.mock('firebase-functions', () => {
       const privateKey = virgilCrypto.exportPrivateKey(virgilCrypto.generateKeys().privateKey);
       return {
         virgil: { 
-          appid: 'mock_virgil_app_id', 
-          apikeyid: 'mock_virgil_api_key_id', 
-          apiprivatekey: privateKey.toString('base64')
+          app_id: 'mock_virgil_app_id', 
+          app_key_id: 'mock_virgil_api_key_id', 
+          app_key: privateKey.toString('base64')
         }
       };
     }
