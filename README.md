@@ -67,6 +67,8 @@ This Firebase function will connect Firebase's and Virgil's authentication via J
 
 * ### **Windows users only**: In **`firebase.json`** rename **`$RESOURCE_DIR`** to **`%RESOURCE_DIR%`**
 
+- Optional: change the field used for identity to `email`, `phone_number` or any unique value in [functions/src/app.ts](https://github.com/VirgilSecurity/virgil-e3kit-firebase-func/blob/master/functions/src/app.ts#L36) . Default is `uid` (Firebase unique id)
+
 - Deploy the Firebase function:
   ```bash
   npm run deploy
