@@ -75,3 +75,21 @@ This Firebase function will connect Firebase's and Virgil's authentication via J
   ```
 
 - And finally, copy the function's URL to the clipboard: go back to the Firebase console -> Functions tab and take a note of your brand new function's url `https://YOUR_FUNCTION_URL.cloudfunctions.net/api` from the TRIGGER column. **You'll need this when setting up your apps**.
+
+## Troubleshooting
+
+### Error: Error parsing triggers: Cannot find module '../virgil_crypto_node.node'
+
+Make sure you've followed the instructions in the README. If you did so, try running this command:
+```bash
+node node_modules/virgil-crypto/scripts/download-node-addon.js
+```
+
+### TypeError: Cannot destructure property `app_id` of 'undefined' or 'null'.
+
+You most likely forgot to generate the `.env` file or named it incorrectly. Make sure the file is named exactly `.env` (no '.txt' at the end and no other extensions) and contains your keys in a similar format:
+```
+APP_ID=40afa3ea[...]520c1be
+APP_KEY_ID=0e6f[...]fd3476c3cf
+APP_KEY=MC4CAQt[...]7DprlzC7gG1
+```
