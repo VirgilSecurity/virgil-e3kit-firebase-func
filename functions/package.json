@@ -28,7 +28,7 @@
     "firebase": "^7.2.1",
     "firebase-tools": "^7.2.2",
     "jest": "^24.8.0",
-    "rimraf": "^2.6.3",
+    "rimraf": "^3.0.1",
     "supertest": "^4.0.2",
     "ts-jest": "^24.0.2",
     "tslint": "^5.8.0",
