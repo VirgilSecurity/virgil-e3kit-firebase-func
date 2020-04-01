@@ -73,8 +73,6 @@ This Firebase function will connect Firebase's and Virgil's authentication via J
   npm run deploy
   ```
 
-- And finally, copy the function's URL to the clipboard: go back to the Firebase console -> Functions tab and take a note of your brand new function's url `https://YOUR_FUNCTION_URL.cloudfunctions.net/getVirgilJwt` from the TRIGGER column. **You'll need this when setting up your apps**.
-
 ## Troubleshooting
 
 ### Error: Error parsing triggers: Cannot find module '../virgil_crypto_node.node'
