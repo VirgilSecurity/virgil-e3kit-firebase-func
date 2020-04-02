@@ -9,7 +9,8 @@
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log",
     "configure": "node ./utils/configure.js",
-    "clean": "rimraf lib"
+    "clean": "rimraf lib",
+    "test": "npm run configure && npm run build && mocha --reporter spec"
   },
   "main": "lib/index.js",
   "dependencies": {
@@ -22,7 +23,9 @@
   "devDependencies": {
     "dotenv": "^8.1.0",
     "firebase": "^7.13.1",
+    "firebase-functions-test": "^0.2.0",
     "firebase-tools": "^7.16.2",
+    "mocha": "^7.1.1",
     "rimraf": "^3.0.1",
     "tslint": "^5.8.0",
     "typescript": "^3.4.5"
