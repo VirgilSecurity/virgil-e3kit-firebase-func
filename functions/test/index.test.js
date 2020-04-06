@@ -1,5 +1,4 @@
 const assert = require('assert');
-const { expect } = require('chai');
 const { initCrypto, VirgilCrypto, VirgilCardCrypto } = require('virgil-crypto');
 const { VirgilCardVerifier, CardManager, CallbackJwtProvider } = require('virgil-sdk');
 const config = require('./test.config');
@@ -39,10 +38,9 @@ describe('Cloud Functions', async () => {
         const req = { auth: {token: { uid: ''}} };
 
         const getVirgilJwtWrapped = test.wrap(myFunctions.getVirgilJwt);
-        try {
-            expect ( await getVirgilJwtWrapped([], req) ).to.be.an.instanceof ( TypeError );
-        } catch ( err ) {
-            expect ( err ).to.be.an.instanceof ( TypeError );
-        }
+        await assert.rejects(
+            async () => await getVirgilJwtWrapped([], req),
+            TypeError
+        );
     });
 });
