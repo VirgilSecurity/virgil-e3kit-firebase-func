@@ -1,8 +1,9 @@
-var assert = require('assert');
-var { initCrypto, VirgilCrypto, VirgilCardCrypto } = require('virgil-crypto');
-var { VirgilCardVerifier, CardManager, CallbackJwtProvider } = require('virgil-sdk');
-var config = require('./test.config');
-var myFunctions = require('../lib/index.js');
+const assert = require('assert');
+const { expect } = require('chai');
+const { initCrypto, VirgilCrypto, VirgilCardCrypto } = require('virgil-crypto');
+const { VirgilCardVerifier, CardManager, CallbackJwtProvider } = require('virgil-sdk');
+const config = require('./test.config');
+const myFunctions = require('../lib/index.js');
 
 const test = require('firebase-functions-test')({
     databaseURL: config.databaseURL,
@@ -12,31 +13,36 @@ const test = require('firebase-functions-test')({
 
 test.mockConfig({virgil: config.virgil});
 
-describe('Cloud Functions', () => {
-    let token;
-    it('Get Virgil JWT', (done) => {
+describe('Cloud Functions', async () => {
+    
+    it('Test firebase function for authorized user', async () => {
         const req = { auth: {token: { uid: 'alice@example.com'}} };
+        
+        const getVirgilJwtWrapped = test.wrap(myFunctions.getVirgilJwt);
+        var res = await getVirgilJwtWrapped([], req);
+        token = res.token;
+        assert.equal(res.hasOwnProperty('token'), true);
 
-        const wrapped = test.wrap(myFunctions.getVirgilJwt);
-        wrapped([], req).then((res) => {
-            assert.equal(res.hasOwnProperty('token'), true);
-            token = res.token;
-            done();
-        });
-    });
-
-    it('Init Card manager', async () => {
         await initCrypto();
         const cardCrypto = new VirgilCardCrypto(new VirgilCrypto());
-        const cardVerifier = new VirgilCardVerifier(cardCrypto);
-
+        const cardVerifier = new VirgilCardVerifier(cardCrypto);    
         const cardManager = new CardManager({
             cardCrypto: cardCrypto,
             cardVerifier: cardVerifier,
             accessTokenProvider: new CallbackJwtProvider(() => token)
         });
-        
-        await cardManager.searchCards('alice@example.com');
-        assert.ok(true);
+        const result = await cardManager.searchCards('alice@example.com');
+        assert.ok(result);
+    });
+
+    it('Test firebase function for unauthorized user', async () => {
+        const req = { auth: {token: { uid: ''}} };
+
+        const getVirgilJwtWrapped = test.wrap(myFunctions.getVirgilJwt);
+        try {
+            expect ( await getVirgilJwtWrapped([], req) ).to.be.an.instanceof ( TypeError );
+        } catch ( err ) {
+            expect ( err ).to.be.an.instanceof ( TypeError );
+        }
     });
 });
