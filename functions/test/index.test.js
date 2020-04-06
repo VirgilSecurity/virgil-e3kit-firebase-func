@@ -18,8 +18,7 @@ describe('Cloud Functions', async () => {
         const req = { auth: {token: { uid: 'alice@example.com'}} };
         
         const getVirgilJwtWrapped = test.wrap(myFunctions.getVirgilJwt);
-        var res = await getVirgilJwtWrapped([], req);
-        token = res.token;
+        const res = await getVirgilJwtWrapped([], req);
         assert.equal(res.hasOwnProperty('token'), true);
 
         await initCrypto();
@@ -28,10 +27,10 @@ describe('Cloud Functions', async () => {
         const cardManager = new CardManager({
             cardCrypto: cardCrypto,
             cardVerifier: cardVerifier,
-            accessTokenProvider: new CallbackJwtProvider(() => token)
+            accessTokenProvider: new CallbackJwtProvider(() => res.token)
         });
-        const result = await cardManager.searchCards('alice@example.com');
-        assert.ok(result);
+        const cards = await cardManager.searchCards('alice@example.com');
+        assert.ok(cards);
     });
 
     it('Test firebase function for unauthorized user', async () => {

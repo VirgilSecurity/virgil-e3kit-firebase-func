@@ -10,7 +10,7 @@
     "logs": "firebase functions:log",
     "configure": "node ./utils/configure.js",
     "clean": "rimraf lib",
-    "test": "npm run configure && npm run build && mocha --reporter spec"
+    "test": "mocha --reporter spec"
   },
   "main": "lib/index.js",
   "dependencies": {
