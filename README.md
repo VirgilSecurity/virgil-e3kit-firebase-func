@@ -6,6 +6,7 @@ This repository contains a backend's function that connects your Virgil and Fire
 
 ## Prerequisites
 - [Node](https://nodejs.org/en/download) version **from 10 to 13**
+> You can use one of node version managers to switch the version: [n](https://github.com/tj/n) or [nvm](https://github.com/creationix/nvm)
 
 ## Configure Your Firebase Project
 
