@@ -35,12 +35,15 @@ describe('Cloud Functions', async () => {
     });
 
     it('Test firebase function for unauthorized user', async () => {
-        const req = { auth: {token: { uid: ''}} };
+        const req = {};
 
         const getVirgilJwtWrapped = test.wrap(myFunctions.getVirgilJwt);
         await assert.rejects(
             async () => await getVirgilJwtWrapped([], req),
-            TypeError
+            {
+                name: 'Error',
+                message: 'The function must be called while authenticated.'
+            }
         );
     });
 });
