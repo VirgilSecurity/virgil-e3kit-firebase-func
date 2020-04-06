@@ -3,5 +3,7 @@ config.json
 .firebaserc
 .vscode
 .env
-functions/src/lib/*
+functions/lib/*
 firebase-debug.log
+virgil-demo-10380-8d7e72b52304.json
+test.config.json

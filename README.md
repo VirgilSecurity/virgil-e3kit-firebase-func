@@ -5,8 +5,8 @@
 This repository contains a backend's function that connects your Virgil and Firebase accounts for implementing end-to-end encryption.
 
 ## Prerequisites
-- [Node](https://nodejs.org/en/download) version **from 6 to 10**
-> Node 11 is not supported yet, you can use one of node version managers to switch the version: [n](https://github.com/tj/n) or [nvm](https://github.com/creationix/nvm)
+- [Node](https://nodejs.org/en/download) version **from 10 to 13**
+> You can use one of node version managers to switch the version: [n](https://github.com/tj/n) or [nvm](https://github.com/creationix/nvm)
 
 ## Configure Your Firebase Project
 
@@ -67,14 +67,12 @@ This Firebase function will connect Firebase's and Virgil's authentication via J
 
 * ### **Windows users only**: In **`firebase.json`** rename **`$RESOURCE_DIR`** to **`%RESOURCE_DIR%`**
 
-- Optional: change the field used for identity to `email`, `phone_number` or any unique value in [functions/src/app.ts](https://github.com/VirgilSecurity/virgil-e3kit-firebase-func/blob/master/functions/src/app.ts#L36) . Default is `uid` (Firebase unique id)
+- Optional: change the field used for identity to `email`, `phone_number` or any unique value in [functions/src/index.ts](https://github.com/VirgilSecurity/virgil-e3kit-firebase-func/blob/master/functions/src/index.ts#L15) . Default is `uid` (Firebase unique id)
 
 - Deploy the Firebase function:
   ```bash
   npm run deploy
   ```
-
-- And finally, copy the function's URL to the clipboard: go back to the Firebase console -> Functions tab and take a note of your brand new function's url `https://YOUR_FUNCTION_URL.cloudfunctions.net/api` from the TRIGGER column. **You'll need this when setting up your apps**.
 
 ## Troubleshooting
 
