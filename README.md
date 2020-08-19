@@ -60,15 +60,15 @@ This Firebase function will connect Firebase's and Virgil's authentication via J
 
 1. Navigate to the Virgil Dashboard -> Your Application -> E3Kit Section.
 
-<img src="img/virgil_app.png" alt="Virgil Application">
+<img height="640px" src="img/virgil_app.png" alt="Virgil Application">
 
 2. Generate `.env` in the **.env file** section.
 
-<img src="img/virgil_env.png" alt="Virgil Application .env generation">
+<img height="640px" src="img/virgil_env.png" alt="Virgil Application .env generation">
 
 3. Download the generated file, paste it into the project root folder and rename it to `.env`.
 
-<img src="img/virgil_creds.png" alt="Virgil Application .env credentials">
+<img height="640px" src="img/virgil_creds.png" alt="Virgil Application .env credentials">
 
 ### Install dependencies
 
