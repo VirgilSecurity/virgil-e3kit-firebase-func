@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "dotenv": "^8.1.0",
-    "firebase": "^7.13.2",
+    "firebase": "^7.18.0",
     "firebase-functions-test": "^0.2.0",
     "firebase-tools": "^8.0.1",
     "mocha": "^7.1.1",

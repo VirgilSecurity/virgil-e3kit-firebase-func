@@ -19,6 +19,7 @@ If you haven't already, set up _Sign-in method_ in your Firebase Project by enab
 To set up your Sign-in method, go to your [Firebase Console](https://console.firebase.google.com) and navigate to **Authentication**, under **Develop**. Go to the **Sign-in method** tab and set up your preferred sing-in method(s).
 
 ## Deploy the Firebase function
+
 This Firebase function will connect Firebase's and Virgil's authentication via JWT tokens.
 
 - Clone this repository
@@ -27,34 +28,51 @@ This Firebase function will connect Firebase's and Virgil's authentication via J
   cd virgil-e3kit-firebase-func
   ```
 
-- Install Firebase CLI if you haven't already.
+### Set up Firebase project
+
+- Install Firebase CLI if you haven't already:
   ```bash
   npm install -g firebase-tools
   ```
 
-- Start up the Firebase CLI
+- Start up the Firebase CLI:
   ```bash
   firebase login
   ```
 
-- Connect this repository to your Firebase project
+- Navigate to this repository and connect it to your Firebase project:
   ```bash
   firebase use --add
   ```
 
-- Select your firebase project from the list and press ENTER.
+- Select your Firebase project from the list and press ENTER.
 
 - Type an alias for your project and press ENTER again.
+
+<img src="img/firebase_use_add.png" alt="Connect repository to your Firebase project">
+
+
+### Set up Virgil Application
 
 - [Sign up for a free Virgil account](https://dashboard.virgilsecurity.com/signup)
 
 - Get your Virgil Credentials:
 
 1. Navigate to the Virgil Dashboard -> Your Application -> E3Kit Section.
+
+<img src="img/virgil_app.png" alt="Virgil Application">
+
 2. Generate `.env` in the **.env file** section.
+
+<img src="img/virgil_env.png" alt="Virgil Application .env generation">
+
 3. Download the generated file, paste it into the project root folder and rename it to `.env`.
 
-- To install dependencies and configure Virgil Credentials run:
+<img src="img/virgil_creds.png" alt="Virgil Application .env credentials">
+
+### Install dependencies
+
+- To install dependencies and configure Virgil Credentials, in cmd navigate to the repository folder and run:
   ```bash
   cd functions
   npm install
@@ -69,10 +87,16 @@ This Firebase function will connect Firebase's and Virgil's authentication via J
 
 - Optional: change the field used for identity to `email`, `phone_number` or any unique value in [functions/src/index.ts](https://github.com/VirgilSecurity/virgil-e3kit-firebase-func/blob/master/functions/src/index.ts#L15) . Default is `uid` (Firebase unique id)
 
+### Deploy function
+
 - Deploy the Firebase function:
   ```bash
   npm run deploy
   ```
+
+Now, in your at your [Firebase Console](https://console.firebase.google.com) in "Develop" -> "Functions" you'll be able to see the function deployed:
+
+<img src="img/firebase_deployed.png" alt="Firebase function deployed">
 
 ## Troubleshooting
 
@@ -91,3 +115,14 @@ APP_ID=40afa3ea[...]520c1be
 APP_KEY_ID=0e6f[...]fd3476c3cf
 APP_KEY=MC4CAQt[...]7DprlzC7gG1
 ```
+
+## License
+
+This library is released under the [3-clause BSD License](LICENSE).
+
+## Support
+Our developer support team is here to help you. Find out more information on our [Help Center](https://help.virgilsecurity.com/).
+
+You can find us on [Twitter](https://twitter.com/VirgilSecurity) or send us email support@VirgilSecurity.com.
+
+Also, get extra help from our support team on [Slack](https://virgilsecurity.com/join-community).
