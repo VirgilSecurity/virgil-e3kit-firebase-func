@@ -15,8 +15,8 @@
   "main": "lib/index.js",
   "dependencies": {
     "cryptiles": "^4.1.2",
-    "firebase-admin": "^8.10.0",
-    "firebase-functions": "^3.6.0",
+    "firebase-admin": "^9.2.0",
+    "firebase-functions": "^3.11.0",
     "virgil-crypto": "^4.1.0",
     "virgil-sdk": "^6.1.0"
   },
