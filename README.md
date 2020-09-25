@@ -89,6 +89,8 @@ This Firebase function will connect Firebase's and Virgil's authentication via J
 
 ### Deploy function
 
+> Since August 17, 2020, Firebase has [changed their billing plans](https://firebase.google.com/support/faq#expandable-10). In order to deploy the function and run this demo, you will need to change your project billing plan to "Blaze" in project settings "Usage and Billing".
+
 - Deploy the Firebase function:
   ```bash
   npm run deploy
